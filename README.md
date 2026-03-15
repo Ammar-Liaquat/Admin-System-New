@@ -25,26 +25,6 @@
 * Helmet
 * dotenv
 
-## Project Structure
-
-```
-Admin-System-New
-│
-├── controllers
-├── middleware
-├── models
-├── routes
-├── services
-├── repository
-├── utils
-├── config
-├── uploads
-│
-├── app.js
-├── server.js
-└── package.json
-```
-
 ## Installation
 
 Clone the repository
@@ -87,6 +67,7 @@ npm run dev
 * Delete user
 * Get all users with pagination
 * Block / Unblock users
+* Active / InActive parks
 * Upload files
 
 ## Security
