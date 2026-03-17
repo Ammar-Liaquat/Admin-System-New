@@ -2,7 +2,7 @@ const User = require("../models/userModel");
 const { hashpassword } = require("../utils/bcrypt");
 const fs = require("fs")
 const deleteFile = require("../utils/deleteFile")
-
+ 
 const usercreate = async (req, res) => {
   try {
     const { name, email, password, park} = req.body;
