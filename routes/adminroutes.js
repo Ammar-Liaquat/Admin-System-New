@@ -10,11 +10,12 @@ const { addPark, getAllParks, deletepark, blockPark } = require("../controllers/
 const { dashboardStats } = require("../controllers/dashboardControllers")
 const { uploadTemplate, getallTemplate, deleteTemplate } = require("../controllers/frameControllers")
 const { uploadPicture,getallPicture,deletePicture } = require("../controllers/PictureControllers")
+const limiter  = require("../middleware/rateLimiter")
 
 
 const router = express.Router()
 // router.post("/admin-register",createadmin)
-router.post("/admin-login",validate(loginSchema),adminlogin)
+router.post("/admin-login",validate(loginSchema),adminlogin, limiter)
 router.post("/admin-usercreate",middelware,validate(userSchema),upload.single("avatar"),usercreate)
 router.post("/admin-edituser/:id",middelware,edituser)
 router.get("/admin-getalluser",middelware,getalluser)

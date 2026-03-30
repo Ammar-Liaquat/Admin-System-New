@@ -7,16 +7,18 @@ const morgan = require("morgan")
 const helmet = require("helmet")
 const cors = require("cors")
 const app = express()
-if (process.env.MONGO_URI !== "test") {
-    connectdb()
-}
-// connectdb()
+let limiter = require("./middleware/rateLimiter")
+// if (process.env.MONGO_URI !== "test") {
+//     connectdb()
+// }
+connectdb()
 app.use(express.json())
 app.use(morgan("dev"))
 app.use(helmet())
 app.use(cors({
     origin: "*"
 }))
+app.use(limiter)
 
 app.use("/api",routes)
 

@@ -64,8 +64,6 @@ const adminlogin = async (req, res) => {
         code: 401,
       });
 
-
-
     let accesstoken = await accessToken(user)
 
     // const [username, domain] = email.split("@");
